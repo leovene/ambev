@@ -1,0 +1,60 @@
+@Ambev.WebApi.Sales_HostAddress = https://localhost:7237
+
+### Create a new sale
+POST {{Ambev.WebApi.Sales_HostAddress}}/api/sales
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": "00000000-0000-0000-0000-000000000001",
+  "customerId": "00000000-0000-0000-0000-000000000002",
+  "saleDate": "2025-01-01T10:00:00Z",
+  "branch": "Main Branch",
+  "items": [
+    {
+      "productId": "00000000-0000-0000-0000-000000000003",
+      "quantity": 5,
+      "unitPrice": 100.0,
+      "discount": 0.1
+    }
+  ]
+}
+
+###
+
+### Update an existing sale
+PUT {{Ambev.WebApi.Sales_HostAddress}}/api/sales/00000000-0000-0000-0000-000000000001
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": "00000000-0000-0000-0000-000000000001",
+  "branch": "Updated Branch",
+  "items": [
+    {
+      "productId": "00000000-0000-0000-0000-000000000003",
+      "quantity": 10,
+      "unitPrice": 90.0,
+      "discount": 0.15
+    }
+  ]
+}
+
+###
+
+### Delete a sale
+DELETE {{Ambev.WebApi.Sales_HostAddress}}/api/sales/00000000-0000-0000-0000-000000000001
+Accept: application/json
+
+###
+
+### Get all sales
+GET {{Ambev.WebApi.Sales_HostAddress}}/api/sales
+Accept: application/json
+
+###
+
+### Get a specific sale
+GET {{Ambev.WebApi.Sales_HostAddress}}/api/sales/00000000-0000-0000-0000-000000000001
+Accept: application/json
+

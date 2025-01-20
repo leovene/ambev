@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Sales</h1>
+    <button mat-raised-button color="primary" [routerLink]="['/sales/sales-form']">
+        Add Sale
+    </button>
+    <button mat-raised-button color="primary" [routerLink]="['/sales/sales-documents']">
+        See Report
+    </button>
+    <mat-table [dataSource]="sales" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+        <mat-cell *matCellDef="let sale"> {{ sale.id }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="customer">
+        <mat-header-cell *matHeaderCellDef> Customer </mat-header-cell>
+        <mat-cell *matCellDef="let sale"> {{ sale.customerId }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="saleDate">
+        <mat-header-cell *matHeaderCellDef> Sale Date </mat-header-cell>
+        <mat-cell *matCellDef="let sale"> {{ sale.saleDate | date }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let sale">
+        </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>  

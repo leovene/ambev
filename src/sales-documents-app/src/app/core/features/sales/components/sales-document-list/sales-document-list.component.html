@@ -1,0 +1,44 @@
+<div class="container">
+  <h1>Sales List</h1>
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+      <mat-cell *matCellDef="let sale"> {{ sale.id }} </mat-cell>
+    </ng-container>
+
+    <!-- Customer ID Column -->
+    <ng-container matColumnDef="customerId">
+      <mat-header-cell *matHeaderCellDef> Customer ID </mat-header-cell>
+      <mat-cell *matCellDef="let sale"> {{ sale.customerId }} </mat-cell>
+    </ng-container>
+
+    <!-- Sale Date Column -->
+    <ng-container matColumnDef="saleDate">
+      <mat-header-cell *matHeaderCellDef> Sale Date </mat-header-cell>
+      <mat-cell *matCellDef="let sale"> {{ sale.saleDate | date:'short' }} </mat-cell>
+    </ng-container>
+
+    <!-- Branch Column -->
+    <ng-container matColumnDef="branch">
+      <mat-header-cell *matHeaderCellDef> Branch </mat-header-cell>
+      <mat-cell *matCellDef="let sale"> {{ sale.branch }} </mat-cell>
+    </ng-container>
+
+    <!-- Items Count Column -->
+    <ng-container matColumnDef="itemsCount">
+      <mat-header-cell *matHeaderCellDef> Items Count </mat-header-cell>
+      <mat-cell *matCellDef="let sale"> {{ sale.items.length }} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <mat-paginator
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+  >
+  </mat-paginator>
+</div>

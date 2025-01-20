@@ -398,3 +398,52 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Angular specific ignores
+node_modules/
+dist/
+out-tsc/
+.tmp/
+.angular/
+.idea/
+
+# Angular build output
+.angular-cache/
+coverage/
+test-output/
+
+# Editor files
+*.sublime-project
+*.sublime-workspace
+*.log
+
+# Environment and temporary files
+src/environments/environment*.ts
+src/environments/environment*.prod.ts
+
+# Mac/Linux specific files
+.DS_Store
+*.swp
+Thumbs.db
+
+# Ignore compiled TypeScript files
+*.js
+*.d.ts
+*.js.map
+
+# Ignore IDE configurations
+.vscode/
+*.code-workspace
+
+# Ignore debug files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Other
+!package.json
+!angular.json
+!tsconfig.json
+!karma.conf.js
+!package-lock.json
