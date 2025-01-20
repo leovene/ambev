@@ -24,7 +24,7 @@ docker-compose up -d
 
 4. Run the provided batch file to start the backend (API and Worker) and the frontend (Angular application).
 ````
-build-and-run.bat
+build-and-run.ps1
 ````
 
 5. Access the Application
