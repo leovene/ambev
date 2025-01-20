@@ -15,6 +15,7 @@ Copy
 Edit
 git clone <repository-url>
 cd <repository-folder>
+
 2. Start Docker Containers
 Navigate to the root directory of the project and run the following command to start the required services using Docker Compose:
 
