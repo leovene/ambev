@@ -22,8 +22,7 @@ docker-compose up -d
 ````
 3. Wait for the services to initialize completely.
 
-4. Run the Application
-Run the provided batch file to start the backend (API and Worker) and the frontend (Angular application).
+4. Run the provided batch file to start the backend (API and Worker) and the frontend (Angular application).
 ````
 build-and-run.bat
 ````
